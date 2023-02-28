@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './Video.module.css'
 import axios from 'axios'
 import Router, { useRouter } from 'next/router'
+import Image from './cancel.png'
 import baseUrl from '../../utils/baseUrl'
 const Video = ({ src, sub ,user}) => {
     const router = useRouter();
@@ -43,7 +44,7 @@ const del = async ()=>{
                 default
             />
         </video>
-            <button className='set' onClick={del}>back</button>
+            <button className='set' onClick={del}> <img src="/cancel.png" /> </button>
             
           
         </>
