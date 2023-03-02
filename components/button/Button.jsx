@@ -1,7 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-
 const Button = props => {
     return (
         <button className={`btn ${props.className}`}

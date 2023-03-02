@@ -6,39 +6,39 @@ import { faCab, faEye, faPlay, faPlayCircle, faThumbsUp } from '@fortawesome/fre
 import { NumberFormatter } from '../../utils/utilityFunctions';
 import axios from 'axios'
 import baseUrl
- from '../../utils/baseUrl';
+    from '../../utils/baseUrl';
 
-const MovieCard = ({ item,user,datalength}) => {
+const MovieCard = ({ item, user, datalength }) => {
     // console.log(getUserView)
-    
+
     // const [views , setViews] = useState();
     // function getId(){
     //     const view = axios.get(`${baseUrl}/getUser`)
     //     setViews(view)
     //     console.log(setViews)
     // }
-//    console.log(user)
-const myData ={
-    name:user.name,
-    username:user.username,
-    email:user.email,
-    phoneNumber:user.phoneNumber,
-    country:user.country,
-    imgPic:user.profilePicture,
-    userId:user._id
-}
-const setUser =async ()=>{
-    // console.log(user)
-    
-         
-        {
-            try{
+    //    console.log(user)
+    const myData = {
+        name: user.name,
+        username: user.username,
+        email: user.email,
+        phoneNumber: user.phoneNumber,
+        country: user.country,
+        imgPic: user.profilePicture,
+        userId: user._id
+    }
+    const setUser = async () => {
+        // console.log(user)
 
-               const send= await axios.post(`${baseUrl}/signup/livestream`, myData)
-              
-               
+
+        {
+            try {
+
+                const send = await axios.post(`${baseUrl}/signup/livestream`, myData)
+
+
                 console.log(send)
-            }catch(e){
+            } catch (e) {
                 console.log(e)
             }
         }
@@ -57,15 +57,11 @@ const setUser =async ()=>{
                         <span>
                             <FontAwesomeIcon
                                 icon={faEye}
-                                style={{ fontSize: '18px' }} /> {NumberFormatter(datalength)} 
+                                style={{ fontSize: '18px' }} /> {NumberFormatter(datalength)}
                         </span>
                     </div>
                 </div>
             </div>
-
-
-
-
         </>
 
     );
