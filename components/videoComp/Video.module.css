@@ -1,6 +1,38 @@
-.set{
+.set {
     position: fixed;
     z-index: 9999;
     right: 0;
     top: 0;
 }
+
+.crossicon {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.crossline {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    transform: rotate(45deg);
+    margin-top: 20px;
+}
+
+.crossline:hover {
+    background-color: green;
+}
+
+
+.crossline:nth-of-type(2) {
+    transform: rotate(-45deg);
+}
+
+
+.crossline1:hover {
+    background-color: green;
+}
+.crossicon:hover .crossline {
+    background-color: #53ce01;
+  }

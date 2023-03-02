@@ -6,11 +6,11 @@ import baseUrl from '../../../utils/baseUrl';
 import Video from '../../../components/videoComp/Video';
 
 
-const CurrentEpisode = ({ episodes }) => {
+const CurrentEpisode = ({ episodes ,user }) => {
     console.log(episodes);
     return (
 
-        <Video src={episodes[0].video} sub={null} />
+        <Video src={episodes[0].video} sub={null} user={user} />
     )
 }
 

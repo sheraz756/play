@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useState} from 'react'
 import styles from './Video.module.css'
 import axios from 'axios'
 import Router, { useRouter } from 'next/router'
@@ -7,7 +7,13 @@ import baseUrl from '../../utils/baseUrl'
 const Video = ({ src, sub ,user}) => {
     const router = useRouter();
     const id = user._id
+    const [showVideo, setShowVideo] = useState(false);
+
+    const handleClick = () => {
+      setShowVideo(!showVideo);
+    };
 const del = async ()=>{
+    
     {
         try{
 
@@ -18,6 +24,7 @@ const del = async ()=>{
             console.log(send)
         }catch(e){
             console.log(e)
+            router.push('/home')
         }
     }
 }
@@ -33,6 +40,8 @@ const del = async ()=>{
             autoPlay
             controlsList='nodownload'
             className='myVideoPlayer'
+            onClick={handleClick}
+
         >
             <source src={src} type="video/mp4" />
             <source src={src} type="video/webm" />
@@ -44,7 +53,18 @@ const del = async ()=>{
                 default
             />
         </video>
-            <button className='set' onClick={del}> <img src="/cancel.png" /> </button>
+        
+        {/* <button onClick={handleButtonClick}>Click me</button> */}
+     
+        {showVideo && <button className='set' onClick={del}> 
+        
+        <div className={styles.crossicon} >
+        <div className={styles.crossline}></div>
+        <div className={styles.crossline}></div>
+
+        </div>
+        
+         </button>} 
             
           
         </>

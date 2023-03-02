@@ -1,4 +1,4 @@
-const baseUrl = "https://apiv1.playeon.com/api/v1"
+const baseUrl = "http://localhost:5000/api/v1"
 
 export default baseUrl;
 

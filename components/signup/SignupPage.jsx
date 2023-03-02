@@ -38,6 +38,14 @@ const SignupPage = ({ Navigation, step }) => {
     useEffect(() => {
         const isUser = Object.values({ name, username, email, password, country, phoneNumber }).every(item => Boolean(item));
         isUser ? setSubmitDisable(false) : setSubmitDisable(true);
+        if(phoneNumber.length<11)
+        {
+            isUser = setSubmitDisable(true)
+        }
+        else if(phoneNumber.length>11)
+        {
+            isUser = setSubmitDisable(true)
+        }
     }, [user])
 
     // input handler
