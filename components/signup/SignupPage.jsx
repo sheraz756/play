@@ -31,7 +31,8 @@ const SignupPage = ({ Navigation, step }) => {
     const [usernameLoading, setUsernameLoading] = useState(false);
     const [errorMsg, setErrorMsg] = useState(null);
     const [formLoading, setFormLoading] = useState(false);
-    const { name, email, password, country, phoneNumber } = user;
+    const [usernameLen, setusernameLen] = useState(false);
+    const { name, email, password, country, phoneNumber ,BdoId } = user;
 
 
     // if fields empty disable next button
@@ -46,6 +47,10 @@ const SignupPage = ({ Navigation, step }) => {
         {
             isUser = setSubmitDisable(true)
         }
+        else if(username<4){
+            setusernameLen(true)
+        }
+     
     }, [user])
 
     // input handler
@@ -126,12 +131,14 @@ const SignupPage = ({ Navigation, step }) => {
                                         setUserName(e.target.value);
                                         if (regexUserName.test(e.target.value)) {
                                             setUsernameAvailable(true)
-                                        } else {
+                                        }
+                                     
+                                         else {
                                             setUsernameAvailable(false)
                                         }
                                     }} />
                                 <div className={styles.customDivIcon}>
-                                    {usernameAvailable ?
+                                    {usernameAvailable && username.length>=4 ?
                                         <FontAwesomeIcon icon={faCircleCheck} style={{ color: '13b164' }} />
                                         :
                                         <FontAwesomeIcon icon={faCircleXmark} style={username === "" ? { color: 'transparent', fontSize: '25px' } : { color: 'crimson' }} />
@@ -169,6 +176,7 @@ const SignupPage = ({ Navigation, step }) => {
                                 name='phoneNumber'
                                 autoComplete='off'
                                 onChange={handleChange} />
+                               
 
                             <select name='country' onChange={handleChange}>
                                 <option selected disabled>Choose Your City</option>
@@ -176,7 +184,14 @@ const SignupPage = ({ Navigation, step }) => {
                                     <option>{country}</option>
                                 ))}
                             </select>
-
+                            <input className={styles.no__arrow}
+                                type='text'
+                                value={BdoId}
+                                placeholder='Enter Your Referal Code'
+                                maxLength='13'
+                                name='BdoId'
+                                autoComplete='off'
+                                onChange={handleChange} />
                         </div>
 
 
