@@ -1,14 +1,14 @@
 .set {
     position: fixed;
     z-index: 9999;
-    right: 0;
+    left: 0;
     top: 0;
 }
 
 .crossicon {
     position: relative;
-    width: 24px;
-    height: 24px;
+    width: 14px;
+    height: 14px;
 }
 
 .crossline {

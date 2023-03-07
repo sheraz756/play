@@ -57,7 +57,7 @@ const MovieCard = ({ item, user, datalength }) => {
                         <span>
                             <FontAwesomeIcon
                                 icon={faEye}
-                                style={{ fontSize: '18px' }} /> {NumberFormatter(datalength)}
+                                style={{ fontSize: '18px' }} /> {NumberFormatter(item.views)}
                         </span>
                     </div>
                 </div>

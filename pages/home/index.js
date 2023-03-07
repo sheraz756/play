@@ -21,22 +21,23 @@ const index = ({user}) => {
 
             <div className="container">
                 <MovieList genre={'action'} user={user} />
+                <MovieList genre={'comedies'} user={user} />
+                <MovieList genre={'crime'} user={user} />
+                <MovieList genre={'dramas'}  user={user} />
+                <MovieList genre={'horror'} user={user} />
+                <MovieList genre={'romance'} user={user} />
+                <MovieList genre={'sci-fi'} user={user} />
+                <MovieList genre={'thriller'} user={user} />
                 <MovieList genre={'anime'} user={user} />
                 <MovieList genre={'award-winning'} user={user} />
                 <MovieList genre={'children & fantasy'} user={user} />
                 <MovieList genre={'classics'} user={user} />
-                <MovieList genre={'comedies'} user={user} />
-                <MovieList genre={'crime'} user={user} />
                 <MovieList genre={'documentaries'} user={user} />
                 <MovieList genre={'fantasy'} user={user} />
-                <MovieList genre={'dramas'}  user={user} />
                 <MovieList genre={'hollywood'} user={user} />
-                <MovieList genre={'horror'} user={user} />
                 <MovieList genre={'music & musical'} user={user} />
-                <MovieList genre={'romance'} user={user} />
-                <MovieList genre={'sci-fi'} user={user} />
                 <MovieList genre={'sports'} user={user} />
-                <MovieList genre={'thriller'} user={user} />
+                
             </div>
 
         </>
